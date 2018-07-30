@@ -12,8 +12,7 @@ module.exports = {
         publicPath: "/dist/",
         filename: 'fetch-polyfill.js',
         library: "fetch-polyfill",
-        libraryTarget: "umd",
-        umdNamedDefine: true
+        libraryTarget: "commonjs2",
     },
     module: {
         rules: [

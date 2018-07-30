@@ -2,7 +2,7 @@ import Body from "./body";
 import Headers from "./headers";
 
 class Response extends Body {
-    static REDIRECT_STATUS = [301, 302, 303, 307, 308]
+    // static REDIRECT_STATUS = [301, 302, 303, 307, 308]
     constructor(body, init) {
         super()
         init = init || {}
@@ -33,9 +33,9 @@ Response.error = () => {
 }
 
 Response.redirect = (url, status) => {
-    if (Response.REDIRECT_STATUS.indexOf(status) === -1) {
-        throw new RangeError('Invalid status code')
-    }
+    // if (Response.REDIRECT_STATUS.indexOf(status) === -1) {
+    //     throw new RangeError('Invalid status code')
+    // }
 
     return new Response(null, {status: status, headers: {location: url}})
 }
