@@ -33,9 +33,9 @@ Response.error = () => {
 }
 
 Response.redirect = (url, status) => {
-    // if (Response.REDIRECT_STATUS.indexOf(status) === -1) {
-    //     throw new RangeError('Invalid status code')
-    // }
+    if ([301, 302, 303, 307, 308].indexOf(status) === -1) {
+        throw new RangeError('Invalid status code')
+    }
 
     return new Response(null, {status: status, headers: {location: url}})
 }

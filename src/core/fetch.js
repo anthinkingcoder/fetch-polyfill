@@ -1,6 +1,7 @@
 import Request from './request'
 import Response from './response'
 import Headers from './headers'
+import support from '../util/support'
 
 function parseHeaders(rawHeaders) {
     var headers = new Headers()
