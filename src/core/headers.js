@@ -5,7 +5,7 @@ class Headers {
     constructor(init) {
         this.maps = new Map()
         if (init instanceof Headers) {
-            Headers.forEach((value, name) => {
+            init.forEach((value, name) => {
                 this.append(name, value)
             })
         } else if (init) {
