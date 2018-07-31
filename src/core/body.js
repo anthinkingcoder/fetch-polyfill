@@ -23,7 +23,7 @@ class Body {
         }
 
         if (this._bodyBlob) {
-            return dataTransform.blodToText(this._bodyBlob)
+            return dataTransform.blobToText(this._bodyBlob)
         } else if (this._bodyArrayBuffer) {
             return Promise.resolve(dataTransform.arrayBufferToText(this._bodyArrayBuffer))
         } else {
@@ -46,7 +46,6 @@ class Body {
         if (rejected) {
             return rejected
         }
-
         if (this._bodyBlob) {
             return Promise.resolve(this._bodyBlob)
         } else if (this._bodyArrayBuffer) {
@@ -60,7 +59,7 @@ class Body {
 
     _consumed() {
         if (this.bodyUsed) {
-            return Promise.reject(new TypeError('Already read'))
+            return Promise.reject(new TypeError('body stream already read'))
         }
         this.bodyUsed = true
     }
@@ -85,7 +84,7 @@ class Body {
         } else if (typeCheck.isArrayBuffer(body) && typeCheck.isArrayBufferView(body)) {
             this._bodyArrayBuffer = buffer.clone(body)
         } else {
-            throw new Error('unsupported BodyInit type')
+            throw new Error('unsupported body type')
         }
 
 

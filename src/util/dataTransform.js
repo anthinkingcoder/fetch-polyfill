@@ -7,7 +7,7 @@ export default {
 
     },
 
-    blodToText(blob) {
+    blobToText(blob) {
         const reader = new FileReader()
         reader.readAsText(blob)
         return this.fileReaderReady(reader)

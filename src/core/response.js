@@ -6,7 +6,7 @@ class Response extends Body {
     constructor(body, init) {
         super()
         init = init || {}
-        this.type = 'default'
+        this.type = 'basic'
         this.status = init.status === undefined ? 200 : init.status
         this.ok = this.status >= 200 && this.status < 300
         this.statusText = init.statusText ? init.statusText : 'OK'
