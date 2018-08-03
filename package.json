@@ -1,6 +1,6 @@
 {
   "name": "ywl-fetch",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a fetch polyfill",
   "author": "anthinkingcoder <jojo837769723@gmail.com>",
   "private": false,
