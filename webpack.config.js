@@ -1,44 +1,45 @@
 const webpack = require('webpack')
 const util = require('./util')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 const resolve = util.resolve
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
-    mode: 'production',
-    entry: {
-        main: './index.js'
-    },
-    output: {
-        path: resolve('/dist'),
-        publicPath: "/dist/",
-        filename: 'fetch-polyfill.js',
-        library: "fetch-polyfill",
-        libraryTarget: "commonjs2",
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            sourceMap: true
-                        },
-                    }
-                ],
-                exclude: /node_modules/,
-            }
+  mode: 'production',
+  entry: {
+    main: './src/global-env.js'
+  },
+  output: {
+    path: resolve('/dist'),
+    publicPath: "/dist/",
+    filename: 'fetch-polyfill.js',
+    library: "fetch-polyfill",
+    libraryTarget: "umd",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              sourceMap: false
+            },
+          }
         ],
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new UglifyJsPlugin({
-            parallel: true,
-            sourceMap: true,
-        })
-    ]
+        exclude: /node_modules/,
+      }
+    ],
+  },
+  plugins: [
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     NODE_ENV: '"production"'
+    //   }
+    // }),
+    new UglifyJsPlugin({
+      parallel: true,
+      sourceMap: true,
+    })
+  ]
 };
