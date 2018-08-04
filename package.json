@@ -1,6 +1,6 @@
 {
   "name": "ywl-fetch",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "a fetch polyfill",
   "author": "anthinkingcoder <jojo837769723@gmail.com>",
   "private": false,
@@ -9,8 +9,7 @@
     "compile": "rm -rf lib/* && babel src -d lib --watch"
   },
   "main": "/lib/index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
