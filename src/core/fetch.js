@@ -22,7 +22,6 @@ function parseHeaders(rawHeaders) {
 export default function fetch(input, init) {
   return new Promise(function (resolve, reject) {
     let request = new Request(input, init)
-
     if (request.signal && request.signal.aborted) {
       return reject(new DOMException('Aborted', 'AbortError'))
     }

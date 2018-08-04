@@ -34,7 +34,6 @@ class Request extends Body {
     if (init.headers || !this.headers) {
       this.headers = new Headers(init.headers)
     }
-    console.info(this.headers)
     this.credentials = init.credentials || this.credentials || 'omit'
     this.method = this._normalizeMethod(init.method || this.method || 'GET')
     this.referrer = this.referrer || 'about:client'
