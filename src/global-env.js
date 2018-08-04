@@ -1,7 +1,7 @@
-import fetch from '../src/core/fetch'
-import Response from '../src/core/response'
-import Request from '../src/core/request'
-import Headers from '../src/core/headers'
+import fetch from './/core/fetch'
+import Response from './/core/response'
+import Request from './/core/request'
+import Headers from './/core/headers'
 
 
 if (typeof self !== 'undefined' && typeof self !== 'undefined') {

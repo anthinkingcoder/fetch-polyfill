@@ -4,16 +4,16 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const resolve = util.resolve
 module.exports = {
-  mode: 'production',
+  mode:'production',
   entry: {
-    main: './src/global-env.js'
+    main: './index.js'
   },
   output: {
     path: resolve('/dist'),
     publicPath: "/dist/",
     filename: 'fetch-polyfill.js',
-    library: "fetch-polyfill",
-    libraryTarget: "umd",
+    library: "fetchp",
+    libraryTarget: "umd"
   },
   module: {
     rules: [
@@ -32,14 +32,8 @@ module.exports = {
     ],
   },
   plugins: [
-    // new webpack.DefinePlugin({
-    //   'process.env': {
-    //     NODE_ENV: '"production"'
-    //   }
-    // }),
     new UglifyJsPlugin({
-      parallel: true,
-      sourceMap: true,
+      sourceMap: false,
     })
   ]
 };
