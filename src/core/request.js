@@ -8,7 +8,6 @@ class Request extends Body {
       throw new TypeError("Failed to construct 'Request': 1 argument required, but only 0 present.")
     }
     init = init || {}
-    this.headers = new Headers(init.headers)
     const body = init.body
     if (input instanceof Request) {
       if (input.bodyUsed) {
