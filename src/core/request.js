@@ -21,8 +21,8 @@ class Request extends Body {
       }
       this.method = input.method
       this.mode = input.mode
-      this.signal = request.signal
-      this.referrer = request.referrer
+      this.signal = input.signal
+      this.referrer = input.referrer
 
       if (!this.body && input.body !== null) {
         this.body = input.body
