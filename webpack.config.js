@@ -6,7 +6,7 @@ const resolve = util.resolve
 module.exports = {
   mode:'production',
   entry: {
-    main: './global-env.js'
+    main: './src/index.js'
   },
   output: {
     path: resolve('/dist'),

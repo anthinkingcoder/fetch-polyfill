@@ -85,6 +85,8 @@ export default function fetch(input, init) {
     xhr.send(typeof request.body === 'undefined' ? null : request.body)
   })
 }
+fetch.polyfill = true
+
 
 
 
