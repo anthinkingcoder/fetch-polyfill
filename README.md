@@ -1,6 +1,5 @@
 # fetch-polyfill
-<<<<<<< HEAD
-a fetch polyfill(es6 style)
+> a fetch polyfill(es6 style)
 
 
 ## Installation
